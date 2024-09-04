@@ -10,19 +10,22 @@ echo "B-For the same purpose it was created for."
 echo "C-..."
 echo "D-I know your home address"
 $Jerry = Read-Host "Response?"
+Function Ask-Questions() {
+	Param(
+	$Question,
+	$Option1,
+	$Option2,
+	$Option3,
+	$CorrectOption
+	)	
+	echo $Question
+	$Answer = Read-Host "idk"
+	echo $Option1
+   	echo $Option2
+    	echo $Option3
+	if ($Answer -match $CorrectOption){
 
-if ($Jerry -match "A"){
-echo "Yeah, agreeded"
+    	echo "Correct"}
+	else {echo "wrong"}
 }
-elseif ($Jerry -match "B"){
-echo "Weirdo..."
-}
-elseif ($Jerry -match "C"){
-echo "..."
-}
-elseif ($Jerry -match "D"){
-echo "Yooo, saamee"
-}
-else{
-echo "Naw"
-}s
+Ask-Questions -Question "?" -Option1  "1" -Option2  "2" -Option3  "3" -CorrectOption "1"
